@@ -1,0 +1,82 @@
+\documentclass{standalone}
+% preamble: usepackage, etc.
+\begin{document}
+	
+前方高能，非战斗人员请撤离
+弹幕  护体
+弹幕  护体
+弹幕  护体
+弹幕  护体
+
+
+\begin{landscape}
+\begin{table}[t]
+\caption{System corrections of the learning strategies for a relatively longer test sentence}
+\label{table4}       % Give a unique label
+
+\begin{tabular}{p{6cm} p{13cm}  } %{ll|l|l|l|l}
+
+\hline
+\hline
+\textbf{System} & \textbf{Sentence}  \\
+\noalign\hline
+Source    
+&But I disegree this opinion because often the advertisement do n't speak about the only functionals of the product but it promises other characteristics that do n't depend by it .   \\
+
+\hline\hline
+Two-tier seq2seq \(\Theta_{B_0}\leftarrow\Theta_{B_1}\), \(S^*\)                     
+&But I \textcolor{red}{agree} this opinion because often the advertisement do n't speak about the only functionals of the product but it promises other characteristics that do n't depend by it .   \\
+
+\hline
+Three-tier seq2seq  \(\Theta_{B_0}\leftarrow\Theta_{B_1}\leftarrow \Theta_{B_2}\), \(S^*\)    
+&But I \textcolor{blue}{disagree with} this opinion because often the advertisement do n't speak about the only functionals of the product but it promises other characteristics that do n't depend by it . \\
+
+\hline
+Two-tier seq2seq \(\Theta_{B_0}\leftarrow\Theta_{X}\), \(S^*\)      
+&But I \textcolor{red}{agree} \textcolor{blue}{with} this opinion because often the advertisement do n't speak about the only functionals of the product but it promises other characteristics that do n't depend by it .\\
+
+\hline
+Three-tier seq2seq \(\Theta_{B_0}\leftarrow\Theta_{X}\leftarrow \Theta_{Y}\), \(S^*\)	     
+&But I \textcolor{blue}{disagree with} this opinion because often the advertisement do n't speak about the only functionals of the product but it promises other characteristics that do n't depend by it .  \\
+
+\hline\hline
+
+Two-tier seq2seq \(\Theta_{B_0}\leftarrow\Theta_{B_1}\), \(S^{**}\)		               	        
+&But I \textcolor{blue}{disagree with} this opinion because often the \textcolor{blue}{advertisements} do n't speak about the only \textcolor{blue}{functions} of the product but it promises other characteristics that do n't depend by it . \\
+
+\hline
+Three-tier seq2seq \(\Theta_{B_0}\leftarrow\Theta_{B_1}\leftarrow \Theta_{B_2}\), \(S^{***}\)		    
+&But I \textcolor{blue}{disagree with} this opinion because often the \textcolor{blue}{advertisements} do n't speak about the only \textcolor{blue}{functions} of the product but it promises other characteristics that do n't depend \textcolor{blue}{on} it .   \\
+
+\hline
+Two-tier seq2seq  \(\Theta_{B_0}\leftarrow\Theta_{X}\), \(S^{**}\)			                     
+&But I \textcolor{blue}{disagree with} this opinion because often the \textcolor{blue}{advertisements} do n't speak about the only \textcolor{blue}{functions} of the product but \textcolor{red}{it fails to express others .} \\
+
+\hline
+Three-tier seq2seq \(\Theta_{B_0}\leftarrow\Theta_{X}\leftarrow \Theta_{Y}\), 
+\(S^{***}\)			
+&But I \textcolor{blue}{disagree with} this opinion because often the \textcolor{blue}{advertisements} do n't speak about the only \textcolor{blue}{functions} of the product but \textcolor{red}{it fails to express others .} \\
+
+\hline\hline
+Reference 0	   &But I \textcolor{blue}{disagree with} this opinion because often the advertisement \textcolor{blue}{does n't} speak about only the \textcolor{blue}{functionality} of the product , but it promises other characteristics that do n't depend \textcolor{blue}{on} it .  \\
+
+\hline
+Reference 1	  &But I \textcolor{blue}{disagree with} this opinion because often the \textcolor{blue}{advertisements} do n't speak about the only \textcolor{blue}{functions} of the product , but it promises other characteristics that they do n't deliver \textcolor{blue}{on} .  \\
+
+\hline
+Reference 2	  &But I \textcolor{blue}{disagree with} this opinion because often the advertisement \textcolor{blue}{does n't} speak about the \textcolor{blue}{function} of the product but it promises other characteristics that do n't depend \textcolor{blue}{on} it .  \\
+
+\hline
+Reference 3	  &But I \textcolor{blue}{disagree with} this opinion because often the advertisement \textcolor{blue}{does n't} just speak about the \textcolor{blue}{functionality} of the product but it promises other characteristics that do n't depend on it .  \\
+\noalign{\smallskip}\hline\hline\noalign{\smallskip}
+
+\multicolumn{2}{l}{Note: }\\
+\multicolumn{2}{l}{{\(S^*\) - The model was trained with the NUCLE dataset.}}\\
+\multicolumn{2}{l}{{\(S^{**}\) - The model was trained with the NUCLE and FCE datasets }}\\
+\multicolumn{2}{l}{{\(S^{***}\) - The model was trained with NUCLE, FCE
+and Lang-8 datasets.}}
+\end{tabular}
+\end{table}
+\end{landscape}
+
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass{standalone}
+% preamble: usepackage, etc.
+\begin{document}
+
+\thesischapterexordium
+
+\textbf{\section{Overview and Background}}
+Various machine vision applications, such as image recognition, identification and detection [1]–[10], use convolution neural networks as the main strategy. CNNs are increasingly being learnt on huge datasets and are being accelerated by increasingly better GPU machines, resulting in most advanced level performance as compared to conventional approaches. The popularity of CNN in machine vision can be attributed to two factors. To begin with, existing CNN-led solutions dominate various simple tasks, such as image super-resolution (SISR) [1], [2], [11], denoising [5], deblurring [12], compression[13], and reconstruction [6], by outperforming other approaches by a wide margin. Secondly, CNNs are also used as an extensiblecomponent that can be incorporated into traditional approaches, allowing them to be used more widely [12], [14], [15]. 
+
+In machine vision, CNNs can be thought of as a non-linear projection from the source images to the output. Conventionally, bigger receptive field aids in increasing CNN's fitting capabilities and promotes effective performance by considering greater spatial details. Increasing the depth of the network, widening the filter size, or performing pooling procedure can all help to expand the receptive field. However, increasing the depth of the network or the filter size will unavoidably increase the cost of computing resource.  pooling procedure can increase the receptive field and ensure continuous improvement by decreasing the spatial dimension of the feature vector. Nonetheless, it is possible that details will be lost. By introducing "zero holes" in convolutional filtering through the method of dilated filtering suggested by the authors in [8] as a trade-off between the size of the receptive and accuracy. 
+
+Notwithstanding, for a fixed value higher than one for the receptive field of the dilating filtering only considers sparse samples from the image input with square patterns, which can result in grid effect [16]. More so, caution should be exercise while widening the receptive field in order to prevent both increasing the cost of computing resource and perhaps sacrificing the performance. To overcome the aforementioned issues, we designed and implemented CNN-based techniques that aim to strike a balance between efficiency and performance. Particularly, we presented presented multi-resolution analysis of discrete wavelet transform convolution neural network which provides feature representations in different scales and frequencies for the first aspect and replaces pooling operations with discrete wavelet transform (DWT) for the second aspect. The multi-resolution feature representations holds majority of the image features while discarding inconsistent details that could affect the performance of the model whereas the suggested sub-sampling approach does not lose any image detail or transitional features owing to the dynamic capabilities of DWT. 
+
+Furthermore, DWT captures both the position and frequency details of the feature vectors as a strategy to maintain texture details of multi-frequency feature representation [21], [22]. Additionally,  channel-wise concatenation strategy is utilized to merge feature vectors in order to enrich feature representation. We demonstrate that dilated filtering may be viewed as a particular variation of multi-resolution discrete wavelet transform CNN, and that the suggested approach is more generic and successful in widening the receptive field than previous approaches. This research attains satisfactory results that outperforms well-known models in image classification and identification task. In terms of sub-sampling procedure with DWT, this research work obtains better performance for images classification and identification compared to pooling layers. The model suggested in this study may have a substantially bigger receptive field yet attains satisfactory performance.
+
+
+In this light, machine vision and image classification research has transitioned to deep learning approaches, which are regarded to be more dependable than classic machine learning techniques in terms of improving image recognition performance. \citeup{4}. The configuration of the human brain is made up of many units of neurons, which is the basis for which deep neural network is modeled after. Information is transmitted across layers that function similarly to the human brain, with neurons serving as unit processes. A variety of deep learning approaches are used in image classification applications, such as those developed by Grace et al. \citeup {6 – 9}. Convolution neural networks are utilized in medicine to extract characteristics from images, while in industries, CNN is utilized to extract behavioral patterns and attributes from signals and network data which are essential to this dissertation because deep learning frameworks provide effective and reliable assessment results.
+
+
+In this dissertation, we utilize  multi-resolution analysis and discrete wavelet transform  approaches coupled with deep learning frameworks to effectively process and extract audio and image data in order to obtain an effective classification and identification.  performance. We presented several comparison with stand-alone deep learning models and state-of-the-art methods.
+
+\textbf{\section{Problem Statement}}
+
+Recent technological development and increasing digital transmission of information have resulted in the creation of massive amounts of information. These information are nearly by definition multimedia of all formats which includes video, images, audio and so on. For most internet consumers, image and audio messages are the major format of correspondence, especially with the introduction of smart devices. The massive rise in internet speed and storage space has only intensified this trend. Image data has been developed, communicated, and propagated rapidly recently, contributing significantly to the world's big data quantity.
+
+The main purpose of this dissertation is to develop and implement highly effective wavelet multi-resolution deep learning framework that feed on both audio and image data capable of accomplishing good classification and identification performance despite the difficult behavior of examining audio and image  data with numerous attributes such as low quality, resolution variation, dimensionality, and different sampling rates and frequencies, which makes audio and image data comprehension very difficult. Despite the fact that advances in deep learning complexity and implementation have generated convincing and innovative success in image analysis and interpretation, there is still a major gap in audio analysis when compared to the more accurate image feature presentation. In most audio analysis, deep learning framework process the data in one-dimensional input sample format. Also,  though image analysis has been well explored, less research has been carried out in generating texture details from  audio data  for efficient  analysis.
+
+\textbf{\section{Contribution and Significance}}
+
+In conclusion, this dissertation examines the model construction and implementation of a multi-resolution discrete wavelet transform deep learning framework for obtaining good performance in image classification and identification. The data pre-processing aspect of this dissertation involves converting one-dimensional audio data into two-dimensional domain for effective training. There are four core model contribution is one of three major model contributions in this research; the first model is the multi-resolution analysis CNN framework. The second technique is the  multi-resolution analysis capsule network. The third approach is the super-resolution CNN framework, and the fourth model is the GAN-based super-resolution approach. The models are as follows:
+
+\begin{enumerate}
+    \item The capability of multi-resolution analysis for image classification and identification. This model incorporated multi-resolution analysis scheme into convolution neural network to achieve optimal performance compared to up-to-date stand-alone CNN techniques. The efficacy of the model construction is validated using  the following evaluation metrics; specificity,  ROC,  accuracy, and sensitivity on CICDDoS2019\citeup{10}, RSNA Pneumonia\citeup{26},  COVID-CXR\citeup{24}, CT-repository \citeup{25}, and NIH\citeup{23} dataset.
+    
+    
+    \item An improved wavelet capsule network for accurately classifying images. This model is demonstrated by integrating wavelet into capsule network in a shared weighted fashion with continuous wavelet transform as a pre-processing technique to handle data dimensionality conversion. The efficacy of the model construction is validated using  the following evaluation metrics; specificity,  ROC,  accuracy, and sensitivity on MIT-BIH Normal Sinus Rhythm \citeup{21}, RSNA Pneumonia\citeup{26}, COVID-CXR\citeup{24}, CT-repository \citeup{25}, and NIH\citeup{23} dataset.
+    
+    
+    \item  An efficient wavelet multi-resolution neural network with super-resolution CNN on chest x-ray (CXR) images for COVID-19 pneumonia identification. The Super-Resolution CNN (SRCNN) is used to effectively regenerate high-resolution (HR) CXR images from low-resolution (LR) CXR counterparts, addressing the issue of low CXR image resolution. The HR CXR images are then forwarded into the wavelet multi-resolution neural network, which extracts distinguishing characteristics for COVID-19 identification. The performance of the model is validated using well-known evaluation metrics as follows; accuracy, sensitivity specificity and ROC on RSNA Pneumonia\citeup{26}, COVID-CXR\citeup{24}, CT-repository \citeup{25}, and NIH\citeup{23} dataset.
+    
+    
+    \item For fault diagnosis and classification, a super-resolution generative adversarial learning scheme is implemented. This scheme pits two neural networks, the generator and discriminator against one other to create new and artificial data instances that are regarded genuine. To produce deblurred and denoised HR images, the GAN-based system utilizes a connected nonlinear mapping derived from noise-polluted low-resolution input images. Accuracy, sensitivity, specificity, and ROC are the evaluation metrics adopted in this study using Case Western Reserve University dataset \citeup{38}.
+    
+    
+\end{enumerate}
+
+\textbf{\section{Organization and Outline of the Dissertation}}
+
+The remaining chapters of this dissertation are structured as follows:
+
+\begin{enumerate}
+    \item \textit{Chapter 2}: This chapter provides a useful overview of the existing literature in wavelet transform, multi-resolution Analysis, and deep neural network. The existing strategies are addressed, along with their benefits, drawbacks, and suggestions for improvements.
+
+    \item \textit{Chapter 3}: This chapter introduces the capability of multi-resolution analysis for image classification and identification. The model design incorporated wavelet multi-resolution analysis into Convolution Neural Networks for  the feature extraction and classification of images. The model's building blocks, design, and implementation, as well as enrich experimental analysis, are all thoroughly described.
+
+    \item \textit{Chapter 4}: This chapter describes an improved wavelet capsule network for accurately classifying images. This approach is illustrated by incorporating wavelet into a shared weighted capsule network with continuous wavelet transform as a pre-processing module for converting one-dimensional time-domain audio signal into two-dimensional time-frequency domain scalogram. The scalogram becomes the input data to the wavelet capsule network for feature extraction and classification. 
+    
+
+    \item \textit{Chapter 5}: This chapter describes an effective wavelet multi-resolution neural network with super-resolution CNN for COVID-19 pneumonia diagnosis on chest x-ray (CXR) images. To address the issue of poor CXR image quality, the Super-Resolution CNN (SRCNN) is utilized to successfully regenerate high-resolution (HR) CXR images from low-resolution (LR) CXR counterparts. The wavelet multi-resolution neural network is then used to extract distinguishing characteristics for COVID-19 identification from the HR CXR images.
+   
+   
+    \item \textit{Chapter 6}:  This chapter describes our modified super-resolution generative adversarial learning technique implemented for fault diagnosis and classification. This scheme pits two neural networks, the generator and the discriminator, against one another in order to generate new and artificial data instances that are considered genuine. The GAN-based system uses a connected nonlinear mapping obtained from noise-corrupted low-resolution input images to generate de-blurred and de-noised HR images.
+    
+
+    \item \textit{Chapter 7}: This chapter summarizes  and outlines the reported methodology and fundamental ideas of the dissertation, as well as proposing potential future study areas in the field of wavelet multi-resolution deep neural network for image analysis
+    
+
+\end{enumerate}
+
+
+\end{document}

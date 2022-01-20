@@ -1,0 +1,95 @@
+%!TEX options = --shell-escape
+
+
+\documentclass[doctor]{thesis-uestc}
+\usepackage{xeCJK}
+\usepackage{CJKutf8}
+
+\usepackage{lscape}
+
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{xcolor}
+\usepackage{makecell}
+\usepackage{multicol}
+
+\title{Research on Deep Learning} %论文标题
+%\title{Research on Multi-Resolution Wavelet Deep Neural Network and Its Applications} %论文标题
+
+\titleEn{Research on Deep learning} %英文标题
+%\titleEn{Research on Multi-Resolution Wavelet Deep Neural Network and Its Applications} %英文标题
+
+\author{Flora White Edson} 
+%\author{Monday Happy Nkanta}
+                                                     %作者
+
+\authorEn{Flora White Edson}                                        
+                                               %作者英文名
+%\authorEn{Monday Happy Nkanta}                                               
+
+\advisor{Professor James Lee}                                  %导师
+\advisorEn{Professor James Lee}
+
+%\advisor{Professor Jian Ping Li}                                  %导师
+%\advisorEn{Professor Jian Ping Li}
+
+
+
+%导师师英文名
+
+\school{School of Computer Science and Engineering}                                        %学院英文名
+\major{Computer Science and Technology}                                            %专业
+\majorEn{Computer Science and Technology}           %专业英文名
+\studentid{201814080018}
+
+\begin{document}
+\makecover  %封面
+
+% abstract
+\include{misc/chinese_abstract} %中文摘要
+
+\include{misc/english_abstract} %英文摘要
+
+% table of contents
+\thesistableofcontents   %目录
+
+% list of figures
+\thesisfigurelist
+
+% list of tables
+\thesistablelist
+
+\clearpage
+\pagenumbering{arabic}
+\standardhead
+
+% thesis contents
+% the contents of this dissertation are organized in a folder called chapter.
+% Each chapter is put in a separate .tex file label as c2.tex, c3.tex, ... and so on
+% exordium is chapter 1
+
+\include{chapter/exordium}  % Chapter 1 contents inside the chapter folder
+\include{chapter/c2}        % Chapter 2 contents inside the chapter folder
+\include{chapter/c3}        % Chapter 3 contents inside the chapter folder
+\include{chapter/c4}        % Chapter 4 contents inside the chapter folder
+\include{chapter/c5}        % Chapter 5 contents inside the chapter folder
+\include{chapter/c6}        % Chapter 6 contents inside the chapter folder
+\include{chapter/c7}        % Chapter 7 contents inside the chapter folder
+
+% the images and diagrams are organized in a separate folder called c1, c2, c3, .... and so on, inside the Pic folder
+
+%\include{chapter/template} %若需添加第六章请用这个模板修改
+
+% misc
+\include{misc/acknowledgement}  %致谢
+\thesisloadbibliography[nocite]{reference}  %参考文献
+
+
+% comment while no need
+%\include{misc/appendix}   %附录，论文若无附录则用%将该命令取消
+\thesisloadachievement{publications}  %攻读学位期间取得的成果，若无成果则用%将该命令取消
+%\include{misc/translate_original}  %外文资料原文，论文若未引用外文资料则用%将该命令取消
+%\include{misc/translate_chinese}   %外文资料译文，论文若未引用外文资料则用%将该命令取消
+
+\end{document}
